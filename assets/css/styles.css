@@ -95,9 +95,13 @@ em { font-style: normal; color: var(--accent); }
 .reveal { opacity: 1; }
 html.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out); transition-delay: calc(var(--i,0)*90ms); }
 html.js .reveal.in { opacity: 1; transform: none; }
-html.js .imgrev { clip-path: inset(0 0 100% 0); transition: clip-path 1.1s var(--ease-out); }
-html.js .imgrev.in { clip-path: inset(0 0 0 0); }
-@media (prefers-reduced-motion: reduce) { html.js .reveal, html.js .imgrev { opacity: 1; transform: none; clip-path: none; transition: none; } }
+/* Clip-wipe the inner image, NOT the .imgrev container: a clip-path that
+   collapses the observed element to zero height makes the IntersectionObserver
+   never report it as intersecting, so .in is never added and the image stays
+   hidden forever. Clipping the <img> keeps the container's full geometry. */
+html.js .imgrev img { clip-path: inset(0 0 100% 0); transition: clip-path 1.1s var(--ease-out), transform 1s var(--ease); }
+html.js .imgrev.in img { clip-path: inset(0 0 0 0); }
+@media (prefers-reduced-motion: reduce) { html.js .reveal, html.js .imgrev, html.js .imgrev img { opacity: 1; transform: none; clip-path: none; transition: none; } }
 
 /* ===== HEADER ===== */
 .header { position: fixed; inset: 0 0 auto 0; z-index: var(--z-header); transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease); border-bottom: 1px solid transparent; }

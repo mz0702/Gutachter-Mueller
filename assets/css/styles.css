@@ -108,8 +108,8 @@ html.js .imgrev.in img { clip-path: inset(0 0 0 0); }
 .header.scrolled { background: oklch(0.16 0.006 255 / 0.72); backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%); border-bottom-color: var(--line); }
 .header__in { display: flex; align-items: center; justify-content: space-between; gap: 2rem; height: 5.6rem; transition: height var(--dur) var(--ease); }
 .header.scrolled .header__in { height: 4.6rem; }
-.brand img { height: 2.7rem; width: auto; filter: brightness(0) invert(1); transition: height var(--dur) var(--ease); }
-.header.scrolled .brand img { height: 2.3rem; }
+.brand img { height: 3.51rem; width: auto; filter: brightness(0) invert(1); transition: height var(--dur) var(--ease); }
+.header.scrolled .brand img { height: 2.99rem; }
 .nav { display: flex; align-items: center; gap: clamp(1.1rem, 0.5rem + 1.6vw, 2.4rem); }
 .nav a { font-size: 0.92rem; font-weight: 500; color: var(--text-2); padding: 0.5rem 0; position: relative; transition: color var(--dur) var(--ease); }
 .nav a::after { content: ""; position: absolute; left: 0; bottom: -1px; height: 1px; width: 100%; background: var(--accent); transform: scaleX(0); transform-origin: right; transition: transform var(--dur) var(--ease); }
@@ -297,7 +297,7 @@ html.js .faq-a { max-height: 0; }
 /* ===== FOOTER ===== */
 .footer { border-top: 1px solid var(--line); padding-block: clamp(3rem, 2rem + 3vw, 4.5rem) 2.2rem; }
 .footer__top { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: clamp(2rem, 1rem + 3vw, 4rem); }
-.footer__brand img { height: 3rem; width: auto; filter: brightness(0) invert(1); }
+.footer__brand img { height: 3.9rem; width: auto; filter: brightness(0) invert(1); }
 .footer__brand p { margin-top: 1.2rem; max-width: 34ch; color: var(--text-3); font-size: var(--fs-sm); line-height: 1.6; }
 .footer__col h4 { font-size: var(--fs-label); letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); font-weight: 600; margin-bottom: 1.1rem; }
 .footer__col ul { list-style: none; padding: 0; display: grid; gap: 0.7rem; }

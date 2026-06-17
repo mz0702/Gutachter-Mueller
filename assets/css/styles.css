@@ -43,7 +43,11 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 6rem; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; -webkit-text-size-adjust: 100%; text-size-adjust: 100%;
+  /* dark canvas behind everything (never let white show through on overscroll /
+     transient overflow), and robust horizontal-overflow containment at the root
+     so nothing can ever widen the layout viewport or trigger a zoom-out. */
+  background: var(--bg); overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   font-family: var(--sans); font-size: var(--fs-body); line-height: 1.7;
